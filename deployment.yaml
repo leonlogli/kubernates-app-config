@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernates-app-config
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubernates-app
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: kubernates-app
+        tier: backend
+    spec:
+      containers:
+        - name: second-node
+          image: leonlogli/kubernates-app
+          # resources:
+          #   requests:
+          #     memory: "64Mi"
+          #     cpu: "250m"
+          #   limits:
+          #     memory: "64Mi" # the memory limit equals the above request!
+          #     # no cpu limit! this is excluded on purpose
