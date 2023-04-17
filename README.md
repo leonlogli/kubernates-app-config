@@ -41,3 +41,15 @@ kubectl get services
 # to get an external ip for the kubernates-app-config service and open the generated url in the browser
 minikube service kubernates-app-config
 ```
+
+Delete services and deployment
+
+```bash
+kubectl delete -f="service.yaml,deployment.yaml"
+```
+
+Merge services and deployment into one file
+
+```bash
+kubectl apply -f="kubernates.yaml"
+```
