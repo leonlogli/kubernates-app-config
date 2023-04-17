@@ -25,3 +25,19 @@ To Get a Kubernetes deployments and check the status, run:
 ```bash
 kubectl get deployments
 ```
+
+Expose declaratively the deployment as a Kubernetes service:
+
+```bash
+kubectl apply -f="service.yaml"
+```
+
+Get the external IP address of the service:
+
+```bash
+kubectl get services
+
+# the kubernates-app-config service will have pending external ip because we use minikube in local
+# to get an external ip for the kubernates-app-config service and open the generated url in the browser
+minikube service kubernates-app-config
+```
