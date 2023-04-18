@@ -17,6 +17,13 @@ Navigate to the root directory of the cloned repository:
 Build the Docker image and push it to a registry:
 
 ```bash
+docker build -t username/kubernates-app .
+docker push username/kubernates-app
+```
+
+Apply deployment config
+
+```bash
 kubectl apply -f="deployment.yaml"
 ```
 
